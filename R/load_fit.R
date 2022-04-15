@@ -1,3 +1,14 @@
+#' Load FIT file
+#'
+#' It copies a FIT file (`.fit`) from a location (e.g., the watch
+#' folder) to another location (e.g., person data folder).
+#'
+#' @param fit_source_path (chr) file path for the input FIT file.
+#' @param output_dir (chr) path of the directory into which copy the
+#'   `fit_source_path`.
+#'
+#' @return (chr) output file path
+#' @export
 load_fit <- function(fit_source_path, output_dir) {
   assert_file_exists(fit_source_path)
 

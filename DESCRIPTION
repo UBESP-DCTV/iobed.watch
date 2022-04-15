@@ -17,6 +17,7 @@ Description: An utility package for the management of raw-signals from the
 License: MIT + file LICENSE
 Imports: 
     dplyr,
+    fs,
     lubridate,
     readr,
     rlang (>= 0.4.11),
@@ -26,6 +27,7 @@ Imports:
 Suggests: 
     autotestthat (>= 0.1.1),
     checkmate,
+    digest,
     purrr,
     roxygen2,
     spelling,
