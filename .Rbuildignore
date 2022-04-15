@@ -1,6 +1,6 @@
 ^renv$
 ^renv\.lock$
-^iobed\.bed\.Rproj$
+^iobed\.watch\.Rproj$
 ^\.Rproj\.user$
 ^dev$
 ^LICENSE\.md$

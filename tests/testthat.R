@@ -1,4 +1,4 @@
 library(testthat)
-library(iobed.bed)
+library(iobed.watch)
 
-test_check("iobed.bed")
+test_check("iobed.watch")

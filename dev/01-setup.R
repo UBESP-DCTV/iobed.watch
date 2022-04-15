@@ -1,5 +1,5 @@
 
-usethis::create_package("~/GitHub-UBEP/iobed.bed")
+usethis::create_package("~/GitHub-UBEP/iobed.watch")
 usethis::use_directory("dev", ignore = TRUE)
 fs::file_create("dev/01-setup.R")
 rstudioapi::navigateToFile("dev/01-setup.R")

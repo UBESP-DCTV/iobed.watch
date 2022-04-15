@@ -1,4 +1,4 @@
-Package: iobed.bed
+Package: iobed.watch
 Title: IOBED functions for bed's raw-signals managment at UBEP
 Version: 0.1.1.9000
 Authors@R: c(
@@ -20,7 +20,6 @@ Imports:
     lubridate,
     readr,
     rlang (>= 0.4.11),
-    serial,
     stringr,
     tibble,
     usethis
