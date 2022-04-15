@@ -21,9 +21,7 @@ test_that("load_fit works", {
 
   expect_file_exists(output_path)
 
-  expect_error(
-    load_fit(unexists_input, output_dir)
-  )
+  expect_error(load_fit(unexists_input, output_dir))
   expect_error(
     load_fit(nonfit_input, output_dir), "is not a '\\.fit' file"
   )
