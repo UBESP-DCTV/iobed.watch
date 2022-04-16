@@ -16,8 +16,11 @@ Description: An utility package for the management of raw-signals from the
     Malvestio's smart-bed at UBEP within the IOBED project.
 License: MIT + file LICENSE
 Imports: 
+    checkmate,
     dplyr,
     fs,
+    glue,
+    here,
     lubridate,
     readr,
     rlang (>= 0.4.11),
@@ -26,7 +29,6 @@ Imports:
     usethis
 Suggests: 
     autotestthat (>= 0.1.1),
-    checkmate,
     digest,
     purrr,
     roxygen2,

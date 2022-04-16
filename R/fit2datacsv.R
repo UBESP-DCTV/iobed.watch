@@ -1,5 +1,5 @@
 fit2datacsv <- function(fit_path) {
-  assert_file_exists(fit_path)
+  checkmate::assert_file_exists(fit_path)
 
   if (!stringr::str_detect(fit_path, "\\.fit$")) {
     usethis::ui_stop("

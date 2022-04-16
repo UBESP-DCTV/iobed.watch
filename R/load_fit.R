@@ -10,7 +10,7 @@
 #' @return (chr) output file path
 #' @export
 load_fit <- function(fit_source_path, output_dir) {
-  assert_file_exists(fit_source_path)
+  checkmate::assert_file_exists(fit_source_path)
 
   if (!stringr::str_detect(fit_source_path, "\\.fit$")) {
     usethis::ui_stop("

@@ -1,10 +1,14 @@
 test_that("fit2datacsv works", {
-  # setup
-  sample_data <- here::here("inst/test-data/8356614998_ACTIVITY.fit") |>
-    normalizePath()
+  skip_on_ci()
+  skip_on_cran()
 
-  unexists_input <- here::here("inst/test-data/foo.fit")
-  nonfit_input <- here::here("inst/test-data/foo.txt")
+  # setup
+  output_dir <- withr::local_tempdir()
+  sample_data <- data_test_path("8356614998_ACTIVITY.fit") |>
+    load_fit(output_dir)
+
+  unexists_input <- data_test_path("foo.fit")
+  nonfit_input <- data_test_path("foo.txt")
 
   # eval
   output_datacsv <- fit2datacsv(sample_data)
@@ -26,12 +30,8 @@ test_that("fit2datacsv works", {
 
 test_that("from_fit_path_to_csv_name",{
   # setup
-  sample_data <- here::here("inst/test-data/8356614998_ACTIVITY.fit") |>
-    normalizePath()
-  expected_output <- here::here(
-      "inst/test-data/8356614998_ACTIVITY.csv"
-    ) |>
-    normalizePath()
+  sample_data <- file.path("foo", "8356614998_ACTIVITY.fit")
+  expected_output <- file.path("foo", "8356614998_ACTIVITY.csv")
 
   # eval
   res <- from_fit_path_to_csv_name(sample_data)

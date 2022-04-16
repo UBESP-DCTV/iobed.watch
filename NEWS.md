@@ -1,7 +1,7 @@
 # iobed.watch (development version)
 
 - Added `fit2datacsv` to extract relevant _data_ information from the
-  imported FIT file inCSV format. (#1)
+  imported FIT file in CSV format. (#1)
 - Added `load_fit` to import (i.e., copy) FIT data from watches to
   local folder. (#1)
 

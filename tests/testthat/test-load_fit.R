@@ -1,13 +1,13 @@
 test_that("load_fit works", {
   # setup
-  sample_data <- here::here("inst/test-data/8356614998_ACTIVITY.fit") |>
-    normalizePath()
+  sample_data <- data_test_path("8356614998_ACTIVITY.fit")
   m5d_input <- digest::digest(sample_data, file = TRUE)
 
-  unexists_input <- here::here("inst/test-data/foo.fit")
-  nonfit_input <- here::here("inst/test-data/foo.txt")
+  unexists_input <- data_test_path("foo.fit")
+  nonfit_input <- data_test_path("foo.txt")
 
-  output_dir <- tempdir()
+
+  output_dir <- withr::local_tempdir()
 
   # eval
   output_path <- load_fit(sample_data, output_dir)
