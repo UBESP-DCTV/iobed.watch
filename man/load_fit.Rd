@@ -11,6 +11,9 @@ load_fit(fit_source_path, output_dir, overwrite = FALSE)
 
 \item{output_dir}{(chr) path of the directory into which copy the
 \code{fit_source_path}.}
+
+\item{overwrite}{(lgl, NULL) do you want to overwrite potential
+already existing file?}
 }
 \value{
 (chr) output file path

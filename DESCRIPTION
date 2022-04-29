@@ -27,6 +27,7 @@ Imports:
     rlang (>= 0.4.11),
     stringr,
     tibble,
+    tidyr,
     usethis
 Suggests: 
     autotestthat (>= 0.1.1),

@@ -6,6 +6,8 @@
 #' @param fit_source_path (chr) file path for the input FIT file.
 #' @param output_dir (chr) path of the directory into which copy the
 #'   `fit_source_path`.
+#' @param overwrite (lgl, NULL) do you want to overwrite potential
+#'   already existing file?
 #'
 #' @return (chr) output file path
 #' @export

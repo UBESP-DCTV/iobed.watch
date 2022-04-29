@@ -5,9 +5,10 @@
 #' IO.BED project.
 #'
 #' @param fit_data_csv_path (chr) file path the the `<name>_data.csv`
-#'   file as output from the function [fit2datacsv]
+#'   file as output from the function `fit2datacsv`
 #' @param dir_path (chr, NULL) if not NULL (default) the dir path in
 #'   which to write the resulting tibble as .rds file
+#' @param prefix_name (chr, NULL) optional prefix to add to the filename
 #'
 #' @return a [tibble][tibble::tibble-package] with the imported data FIT
 #'   file.
@@ -39,23 +40,23 @@ parse_fit_data <- function(
 
   useful_data <- raw_data |>
     dplyr::select(
-      record_timestamp_s,
-      record_heart_rate_bpm,
-      record_temperature_c,
-      record_developer_0_sensor_heading_rad,
+      .data[["record_timestamp_s"]],
+      .data[["record_heart_rate_bpm"]],
+      .data[["record_temperature_c"]],
+      .data[["record_developer_0_sensor_heading_rad"]],
       dplyr::matches("acceleration_[xyz]_hd_mgn$")
     ) |>
     dplyr::rename(
-      timestamp = record_timestamp_s,
-      hr = record_heart_rate_bpm,
-      temp_c = record_temperature_c,
-      heading_rad = record_developer_0_sensor_heading_rad,
-      acc_x_hd = record_developer_0_sensor_acceleration_x_hd_mgn,
-      acc_y_hd = record_developer_0_sensor_acceleration_y_hd_mgn,
-      acc_z_hd = record_developer_0_sensor_acceleration_z_hd_mgn
+      timestamp = .data[["record_timestamp_s"]],
+      hr = .data[["record_heart_rate_bpm"]],
+      temp_c = .data[["record_temperature_c"]],
+      heading_rad = .data[["record_developer_0_sensor_heading_rad"]],
+      acc_x_hd = .data[["record_developer_0_sensor_acceleration_x_hd_mgn"]],
+      acc_y_hd = .data[["record_developer_0_sensor_acceleration_y_hd_mgn"]],
+      acc_z_hd = .data[["record_developer_0_sensor_acceleration_z_hd_mgn"]]
     ) |>
     dplyr::mutate(
-      timestamp =.data[["timestamp"]] |>
+      timestamp = .data[["timestamp"]] |>
         lubridate::as_datetime(origin = "1989-12-31T00:00:00UTC")
     )
 
@@ -67,19 +68,19 @@ parse_fit_data <- function(
 
   res <- useful_data |>
     tidyr::separate(
-      acc_x_hd,
+      .data[["acc_x_hd"]],
       paste0("acc_x_hd-", hd_suffix),
       convert = TRUE,
       sep = "\\|"
     ) |>
     tidyr::separate(
-      acc_y_hd,
+      .data[["acc_y_hd"]],
       paste0("acc_y_hd-", hd_suffix),
       convert = TRUE,
       sep = "\\|"
     ) |>
     tidyr::separate(
-      acc_z_hd,
+      .data[["acc_z_hd"]],
       paste0("acc_z_hd-", hd_suffix),
       convert = TRUE,
       sep = "\\|"

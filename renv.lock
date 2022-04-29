@@ -780,6 +780,26 @@
       "Hash": "7ab57a6de7f48a8dc84910d1eca42883",
       "Requirements": []
     },
+    "janitor": {
+      "Package": "janitor",
+      "Version": "2.1.0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "6de84a8c67fb247e721166049c84695f",
+      "Requirements": [
+        "dplyr",
+        "lifecycle",
+        "lubridate",
+        "magrittr",
+        "purrr",
+        "rlang",
+        "snakecase",
+        "stringi",
+        "stringr",
+        "tidyr",
+        "tidyselect"
+      ]
+    },
     "jquerylib": {
       "Package": "jquerylib",
       "Version": "0.1.4",
@@ -1351,6 +1371,17 @@
         "cli"
       ]
     },
+    "snakecase": {
+      "Package": "snakecase",
+      "Version": "0.11.0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "4079070fc210c7901c0832a3aeab894f",
+      "Requirements": [
+        "stringi",
+        "stringr"
+      ]
+    },
     "spelling": {
       "Package": "spelling",
       "Version": "2.2",
@@ -1422,15 +1453,10 @@
     },
     "tibble": {
       "Package": "tibble",
-      "Version": "3.1.6.9001",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteUsername": "tidyverse",
-      "RemoteRepo": "tibble",
-      "RemoteRef": "main",
-      "RemoteSha": "d1ff83a7d7ac4d2c79362479c1b2d7ccb18815d4",
-      "RemoteHost": "api.github.com",
-      "Hash": "c7192ea4c57923fe4094e7a90fdcfe32",
+      "Version": "3.1.6",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "8a8f02d1934dfd6431c671361510dd0b",
       "Requirements": [
         "ellipsis",
         "fansi",

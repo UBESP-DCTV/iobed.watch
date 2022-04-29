@@ -4,11 +4,16 @@
 \alias{parse_fit_data}
 \title{Parse FIT data}
 \usage{
-parse_fit_data(fit_data_csv_path)
+parse_fit_data(fit_data_csv_path, dir_path = NULL, prefix_name = NULL)
 }
 \arguments{
 \item{fit_data_csv_path}{(chr) file path the the \verb{<name>_data.csv}
-file as output from the function \link{fit2datacsv}}
+file as output from the function \code{fit2datacsv}}
+
+\item{dir_path}{(chr, NULL) if not NULL (default) the dir path in
+which to write the resulting tibble as .rds file}
+
+\item{prefix_name}{(chr, NULL) optional prefix to add to the filename}
 }
 \value{
 a \link[tibble:tibble-package]{tibble} with the imported data FIT
