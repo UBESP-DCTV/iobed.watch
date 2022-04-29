@@ -33,6 +33,9 @@ test_that("load_fit works", {
 
 
 test_that("load_fit works if file is already present", {
+  skip_on_ci()
+  skip_on_cran()
+
   # setup
   sample_data <- data_test_path("8356614998_ACTIVITY.fit")
   output_dir <- withr::local_tempdir()

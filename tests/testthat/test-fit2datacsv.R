@@ -29,6 +29,8 @@ test_that("fit2datacsv works", {
 
 
 test_that("from_fit_path_to_csv_name", {
+  skip_on_ci()
+  skip_on_cran()
   # setup
   sample_data <- file.path("foo", "8356614998_ACTIVITY.fit")
   expected_output <- file.path("foo", "8356614998_ACTIVITY.csv")
