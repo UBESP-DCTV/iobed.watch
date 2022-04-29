@@ -1,4 +1,7 @@
-fit2datacsv <- function(fit_path) {
+fit2datacsv <- function(
+    fit_path,
+    fit_jar_path = "C:\\FitSDK\\java\\FitCSVTool.jar"
+) {
   checkmate::assert_file_exists(fit_path)
 
   if (!stringr::str_detect(fit_path, "\\.fit$")) {
@@ -11,7 +14,6 @@ fit2datacsv <- function(fit_path) {
   }
 
   output_path <- from_fit_path_to_csv_name(fit_path)
-  fit_jar_path <- "C:\\FitSDK\\java\\FitCSVTool.jar"
 
 
   cmd <- "java"
