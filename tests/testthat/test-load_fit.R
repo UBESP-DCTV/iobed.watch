@@ -65,6 +65,11 @@ test_that("load_fit works if file is already present", {
   )
   expect_equal(first_time, default_time)
   expect_equal(first_time, skip_time)
+
+  cat(glue::glue("
+    firs_time: {first_time};
+    overwritten_time: {overwrite_time}
+  "))
   expect_true(first_time < overwrite_time)
 
 })
