@@ -1,6 +1,6 @@
 Package: iobed.watch
 Title: IOBED functions for bed's raw-signals managment at UBEP
-Version: 0.1.1.9000
+Version: 0.0.0.9001
 Authors@R: c(
     person("Corrado", "Lanera", , "corrado.lanera@ubep.unipd.it", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-0520-7428")),
@@ -16,16 +16,22 @@ Description: An utility package for the management of raw-signals from the
     Malvestio's smart-bed at UBEP within the IOBED project.
 License: MIT + file LICENSE
 Imports: 
+    checkmate,
     dplyr,
+    fs,
+    glue,
+    here,
+    janitor,
     lubridate,
     readr,
     rlang (>= 0.4.11),
     stringr,
     tibble,
+    tidyr,
     usethis
 Suggests: 
     autotestthat (>= 0.1.1),
-    checkmate,
+    digest,
     purrr,
     roxygen2,
     spelling,
