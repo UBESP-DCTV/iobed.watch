@@ -6,6 +6,8 @@
 #'
 #' @param fit_data_csv_path (chr) file path the the `<name>_data.csv`
 #'   file as output from the function [fit2datacsv]
+#' @param dir_path (chr, NULL) if not NULL (default) the dir path in
+#'   which to write the resulting tibble as .rds file
 #'
 #' @return a [tibble][tibble::tibble-package] with the imported data FIT
 #'   file.
@@ -23,7 +25,11 @@
 #' parse_fit_data(fit_data_csv_path)
 #' }
 #'
-parse_fit_data <- function(fit_data_csv_path) {
+parse_fit_data <- function(
+    fit_data_csv_path,
+    dir_path = NULL,
+    prefix_name = NULL
+) {
   raw_data_text <- readr::read_lines(fit_data_csv_path) |>
     stringr::str_remove_all(",$")  # last column is always empty
 
@@ -59,7 +65,7 @@ parse_fit_data <- function(fit_data_csv_path) {
     stringr::str_remove("^0\\.") |>
     stringr::str_pad(2, side = "right", pad = "0")
 
-  useful_data |>
+  res <- useful_data |>
     tidyr::separate(
       acc_x_hd,
       paste0("acc_x_hd-", hd_suffix),
@@ -96,4 +102,22 @@ parse_fit_data <- function(fit_data_csv_path) {
     dplyr::rename(ms = .data[["fraction_time"]]) |>
     dplyr::relocate(.data[["ms"]], .after = .data[["timestamp"]])
 
+
+  if (!purrr::is_null(dir_path) && fs::is_dir(dir_path)) {
+    rds_filename <- paste(
+      c(prefix_name, basename(fit_data_csv_path)),
+      collapse = "-"
+    ) |>
+      stringr::str_replace_all("_data\\.csv", "_tidy.rds")
+
+    rds_out_path <- file.path(dir_path, rds_filename) |>
+      normalizePath(mustWork = FALSE)
+
+    readr::write_rds(res, rds_out_path)
+    usethis::ui_done(
+      "File {usethis::ui_value(rds_out_path)} written on disk."
+    )
+  }
+
+  res
 }
