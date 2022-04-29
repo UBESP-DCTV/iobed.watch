@@ -4,7 +4,7 @@
 \alias{load_fit}
 \title{Load FIT file}
 \usage{
-load_fit(fit_source_path, output_dir)
+load_fit(fit_source_path, output_dir, overwrite = FALSE)
 }
 \arguments{
 \item{fit_source_path}{(chr) file path for the input FIT file.}

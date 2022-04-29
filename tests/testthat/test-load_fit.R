@@ -27,3 +27,44 @@ test_that("load_fit works", {
   )
   expect_identical(m5d_input, m5d_output)
 })
+
+
+test_that("load_fit works if file is already present", {
+  # setup
+  sample_data <- data_test_path("8356614998_ACTIVITY.fit")
+  output_dir <- withr::local_tempdir()
+
+  output_path <- load_fit(sample_data, output_dir)
+  first_time <- fs::file_info(output_path)[["access_time"]]
+
+  # eval
+  suppressMessages(
+    output_path_default <- load_fit(sample_data, output_dir)
+  )
+  default_time <- fs::file_info(output_path_default)[["access_time"]]
+
+  suppressMessages(
+    output_path_skip <- sample_data |>
+      load_fit(output_dir, overwrite = FALSE)
+  )
+  skip_time <- fs::file_info(output_path_skip)[["access_time"]]
+
+  Sys.sleep(1)
+  output_path_overwrite <- sample_data |>
+    load_fit(output_dir, overwrite = TRUE)
+  overwrite_time <- fs::file_info(output_path_overwrite)[["access_time"]]
+
+
+
+  # test
+  expect_message({
+    suppressMessages(load_fit(sample_data, output_dir))
+    load_fit(sample_data, output_dir) # default skip / not overwrite
+  },
+    "File already exists"
+  )
+  expect_equal(first_time, default_time)
+  expect_equal(first_time, skip_time)
+  expect_true(first_time < overwrite_time)
+
+})
