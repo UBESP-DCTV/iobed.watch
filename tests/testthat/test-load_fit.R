@@ -49,7 +49,7 @@ test_that("load_fit works if file is already present", {
   )
   skip_time <- fs::file_info(output_path_skip)[["access_time"]]
 
-  Sys.sleep(1)
+  Sys.sleep(2)
   output_path_overwrite <- sample_data |>
     load_fit(output_dir, overwrite = TRUE)
   overwrite_time <- fs::file_info(output_path_overwrite)[["access_time"]]
