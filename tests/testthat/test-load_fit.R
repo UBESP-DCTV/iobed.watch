@@ -1,4 +1,7 @@
 test_that("load_fit works", {
+  skip_on_ci()
+  skip_on_cran()
+
   # setup
   sample_data <- data_test_path("8356614998_ACTIVITY.fit")
   m5d_input <- digest::digest(sample_data, file = TRUE)
