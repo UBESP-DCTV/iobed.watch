@@ -15,10 +15,10 @@ An utility package for the management of raw-signals from the Malvestio's smart-
 
 Authors:
 \itemize{
-  \item Carlotta Borghini \email{carlotta.borghini@ubep,unipd.it}
+  \item Carlotta Borghini \email{carlotta.borghini@ubep.unipd.it}
   \item Danila Azzolina \email{danila.azzolina@ubep.unipd.it} (\href{https://orcid.org/0000-0002-8185-5742}{ORCID})
   \item Alessandra Casamento \email{alessandra.casamento@ubep.unipd.it} (\href{https://orcid.org/0000-0001-6156-9020}{ORCID})
-  \item Dario Gregori \email{dario.gregori@ubep,unipd.it} (\href{https://orcid.org/0000-0001-7906-0580}{ORCID}) [copyright holder]
+  \item Dario Gregori \email{dario.gregori@ubep.unipd.it} (\href{https://orcid.org/0000-0001-7906-0580}{ORCID}) [copyright holder]
 }
 
 }
