@@ -1,4 +1,4 @@
-# iobed.watch (development version)
+# iobed.watch 0.1.0
 
 - Added `fit2datacsv` to extract relevant _data_ information from the
   imported FIT file in CSV format. (#1)
