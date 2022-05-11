@@ -1,3 +1,12 @@
+#' Convert FIT-data to CSV
+#'
+#' @param fit_path (chr) path to the source FIT data file
+#' @param fit_jar_path (chr, default 'C:\\FitSDK\\java\\FitCSVTool.jar')
+#'  path to the jar Garmin converter
+#'
+#' @return path to the converted csv
+#' @export
+#'
 fit2datacsv <- function(
     fit_path,
     fit_jar_path = "C:\\FitSDK\\java\\FitCSVTool.jar"
