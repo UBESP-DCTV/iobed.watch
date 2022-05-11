@@ -14,7 +14,7 @@
 load_fit <- function(fit_source_path, output_dir, overwrite = FALSE) {
   checkmate::assert_file_exists(fit_source_path)
 
-  if (!stringr::str_detect(fit_source_path, "\\.fit$")) {
+  if (!stringr::str_detect(fit_source_path, "\\.[Ff][Ii][Tt]$")) {
     usethis::ui_stop("
     {usethis::ui_field('fit_source_path')} is
     {usethis::ui_value(fit_source_path)} which is not a '.fit' file.
