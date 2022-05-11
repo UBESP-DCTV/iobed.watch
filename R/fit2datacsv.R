@@ -13,7 +13,7 @@ fit2datacsv <- function(
 ) {
   checkmate::assert_file_exists(fit_path)
 
-  if (!stringr::str_detect(fit_path, "\\.fit$")) {
+  if (!stringr::str_detect(fit_path, "\\.[Ff][Ii][Tt]$")) {
     usethis::ui_stop("
     {usethis::ui_field('fit_path')} is
     {usethis::ui_value(fit_path)} which is not a '.fit' file.
@@ -41,5 +41,5 @@ fit2datacsv <- function(
 
 
 from_fit_path_to_csv_name <- function(x) {
-  stringr::str_replace(x, "\\.fit$", ".csv")
+  stringr::str_replace(x, "\\.[Ff][Ii][Tt]$", ".csv")
 }
