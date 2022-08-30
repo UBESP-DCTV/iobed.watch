@@ -1,4 +1,4 @@
-# iobed.watch (development version)
+# iobed.watch 0.2.0
 
 # iobed.watch 0.1.0
 
