@@ -13,7 +13,7 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-7906-0580"))
   )
 Description: An utility package for the management of raw-signals from the
-    Malvestio's smart-bed at UBEP within the IOBED project.
+    a smart-bed at UBEP within the IOBED project.
 License: MIT + file LICENSE
 Imports: 
     checkmate,

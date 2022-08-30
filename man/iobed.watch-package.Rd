@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-An utility package for the management of raw-signals from the Malvestio's smart-bed at UBEP within the IOBED project.
+An utility package for the management of raw-signals from the a smart-bed at UBEP within the IOBED project.
 }
 \author{
 \strong{Maintainer}: Corrado Lanera \email{corrado.lanera@ubep.unipd.it} (\href{https://orcid.org/0000-0002-0520-7428}{ORCID}) [copyright holder]
